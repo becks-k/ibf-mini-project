@@ -1,5 +1,7 @@
 # IBF Mini Project
 
+https://intelligent-optimism-production.up.railway.app/
+
 
 ## About
 This project is a mystery game powered by GPT-3.5 Turbo. Players can login, generate new mysteries with their own themes and solve cases by interacting with various elements, such as searching the crime scene, interrogating suspects and reading the daily newspaper for hints.
