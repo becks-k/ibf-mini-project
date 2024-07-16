@@ -1,0 +1,28 @@
+<div class="modal fade" id="apiKeyModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form method="POST" [formGroup]="apiKeyForm" (ngSubmit)="submitApiKey()">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="apiKeyModalLabel">Note</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                        <p>An OpenAI API Key is required for game play. See instructions for more information.</p>
+                        <p>Keys are temporarily cached and will be removed after 60 mins, or upon logout.</p>
+                        <p> For safety, please delete key after use.</p>
+                    <div class="form-container">
+                        <label class="form-label" for="apiKey">API Key </label>
+                        <input class="form-control" type="text" name="apiKey" formControlName="apiKey">
+                    </div>
+                    <div *ngIf="message">
+                        <p>{{message}}</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="closeApiKeyModal" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" [disabled]="apiKeyForm.invalid">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

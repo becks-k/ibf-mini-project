@@ -1,0 +1,43 @@
+<app-header></app-header>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 sidebar">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-sm-9 main-content">
+            <div class="title-container" *ngIf="mystery$ | async as mystery; else loading">
+                <h3 class="mystery-title">{{mystery.mysteryName}}</h3>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#mysteryDetails" aria-expanded="false" aria-controls="mysteryDetails">Mystery Overview</button>
+                
+
+
+                <div class="collapse" id="mysteryDetails">
+                    <div class="card card-body mystery-card">
+                        <h5 class="mystery-headline">{{mystery.newsHeadline}}</h5>
+                        <hr>
+                        <div class="mystery-content">
+                            <div *ngFor="let character of mystery.characters">
+                                <div class="victim" *ngIf="character.victim">
+                                    <img [src]="character.imageUrl" alt="" class="victim-image">
+                                    <p class="victim-name">{{character.name}} 
+                                        <span class="badge badge-danger">Victim</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="mystery-description">
+                                <p class="introduction">{{mystery.introduction}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <hr>
+            </div>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+
+<ng-template #loading>No mystery found</ng-template>

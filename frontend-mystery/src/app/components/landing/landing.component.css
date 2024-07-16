@@ -1,0 +1,19 @@
+.landing-page {
+    text-align: center;
+    margin-top: 10vh;
+}
+
+.landing-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-family: 'momstw', monospace;
+}
+
+.landing-page p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    font-family: 'ttw', monospace;
+}
+
+
+

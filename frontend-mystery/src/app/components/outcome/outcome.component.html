@@ -1,0 +1,16 @@
+<app-header></app-header>
+
+<div class="article-container">
+    <h3>{{outcome.caseOutcome | uppercase}}</h3>
+    <div class="line"></div>
+    <div>
+        <p class="outcome">Investigation Outcome</p>
+        <p>{{outcome.judgeResponse}}</p>
+        <p>{{outcome.aftermath}}</p>
+        <p class="score">Your score: {{outcome.score}}/100</p>
+    </div>
+</div>
+<div class="home-button-container">
+    <button class="btn btn-primary" [routerLink]="['/home', userId]">Home</button>
+    <button class="btn btn-warning" [routerLink]="['/leaderboard']">Leaderboard</button>
+</div>

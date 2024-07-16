@@ -1,0 +1,50 @@
+.leaderboard-container {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 8px; 
+    overflow: hidden; 
+    text-align: center;
+    table-layout: fixed;
+}
+
+.table th, .table td {
+    padding: 0.75rem;
+    vertical-align: middle;
+    border-top: 1px solid #444444; 
+    
+    
+}
+
+.table thead th {
+    vertical-align: middle;
+    border-bottom: 2px solid #d5d5d5;
+    height: 70px;
+}
+
+.table tbody + tbody {
+    border-top: 2px solid #dee2e6;
+}
+
+img {
+    width: 18%;
+    height: auto;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+tr {
+    height: 68px;
+}
+

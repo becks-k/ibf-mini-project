@@ -1,0 +1,44 @@
+<div class="accuse-form-container" *ngIf="mystery$ | async as mystery; else loading">
+    <h2 class="accuse-title">Make your Accusation!</h2>
+    <form [formGroup]="accuseForm" (ngSubmit)="submitAccuseForm()">
+
+        <div class="form-group">
+            <label for="guilty" class="form-label">Who is guilty of the crime?</label>
+            <div class="options-container">
+                <div *ngFor="let character of mystery.characters | orderBy: 'name'">
+                    <div *ngIf="!character.victim" class="option">
+                        <input type="radio" class="btn-check" name="guilty" id="{{character.name}}" autocomplete="off" formControlName="guilty" [value]="character.name">
+                        <label class="btn btn-outline-secondary" for="{{character.name}}">
+                            <img [src]="character.imageUrl" alt="">
+                            {{character.name}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="weapon" class="form-label">What weapon was used for the crime?</label>
+            <div class="options-container">
+                <div *ngFor="let weapons of mystery.weapons | orderBy: 'weapon'" class="option">
+                    <input type="radio" class="btn-check"name="weaponUsedInCrime" id="{{weapons.weapon}}" autocomplete="off" formControlName="weaponUsedInCrime" [value]="weapons.weapon">
+                    <label class="btn btn-outline-secondary" for="{{weapons.weapon}}">{{weapons.weapon}}</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="motive" class="form-label">Motive for Murder </label>
+            <textarea formControlName="guiltyMotive" class="form-control" id="motive" rows="3" placeholder="Describe the motive"></textarea>
+        </div>
+        <div class="accuse-button">
+            <button type="submit" class="btn btn-primary">Accuse</button>
+        </div>
+        <div class="accuse-status" *ngIf="accusation">
+            Submitting report for evaluation...
+        </div>
+    </form>
+</div>
+
+
+<ng-template #loading>Loading...</ng-template>

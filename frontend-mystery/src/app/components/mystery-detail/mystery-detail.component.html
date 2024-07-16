@@ -1,0 +1,45 @@
+<app-header></app-header>
+
+
+<div class="container mt-4 mystery-detail-container">
+    <div class="text-left button-container">
+        <button class="btn btn-secondary" [routerLink]="['/home', userId]">Back</button>
+        <button class="btn btn-primary" (click)="playMystery()">Play!</button>
+    </div>
+
+    <div *ngIf="mystery$ | async as mystery; else loading">
+        <div class="case" >
+            <h2 class="case-title">{{ mystery.mysteryName }}</h2>
+            <hr>
+
+            <!-- Newspaper -->
+            <div class="newspaper">
+                <h3 class="news-headline">{{ mystery.newsHeadline }}</h3>
+                <div class="news-content">
+                    <div class="news-image">
+                        <img class="scene-image" [src]="mystery.coverImageUrl" [alt]="mystery.coverImageDescription">
+                    </div>
+                    <div class="case-description">
+                        <p class="case-intro">{{ mystery.introduction }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Characters -->
+        <div class="characters">
+            <div class="col-md-3 d-flex align-items-stretch" *ngFor="let character of mystery.characters">
+                <div [ngClass]="{'card mb-4 character-card': true, 'victim-card': character.victim}" class="polaroid-frame">
+                    <img class="character-image" id="char-img" [src]="character.imageUrl" [alt]="character.imageDescription">
+                    <div class="polaroid-caption">
+                        <h5 class="character-name">{{ character.name }} <span *ngIf="character.victim === true" class="badge badge-danger">Victim</span></h5>
+                        <p class="character-description">{{ character.personality }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<ng-template #loading>No mystery found</ng-template>

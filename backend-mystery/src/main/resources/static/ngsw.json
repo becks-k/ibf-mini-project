@@ -1,0 +1,107 @@
+{
+  "configVersion": 1,
+  "timestamp": 1721128207181,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/favicon.ico",
+        "/index.html",
+        "/main-OXRNLUPJ.js",
+        "/manifest.webmanifest",
+        "/polyfills-N6LQB2YD.js",
+        "/scripts-KETKLC3O.js",
+        "/styles-IS7JWCUY.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/fonts/earwig.otf",
+        "/fonts/moms-typewriter.ttf",
+        "/fonts/oldlondon.ttf",
+        "/fonts/traveling-typewriter.otf",
+        "/icons/first.png",
+        "/icons/hat.png",
+        "/icons/icon-128x128.png",
+        "/icons/icon-144x144.png",
+        "/icons/icon-152x152.png",
+        "/icons/icon-192x192.png",
+        "/icons/icon-384x384.png",
+        "/icons/icon-512x512.png",
+        "/icons/icon-72x72.png",
+        "/icons/icon-96x96.png",
+        "/icons/second.png",
+        "/icons/third.png",
+        "/icons/winner.png",
+        "/images/crumpled.jpg",
+        "/images/retro-paper.jpg",
+        "/images/stained.avif",
+        "/images/vintage-white.avif"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/favicon.ico": "9c39f434fe1261f68c5e3eefdf734630d99c5670",
+    "/fonts/earwig.otf": "ac3a4eb7aa150135b8f7a45dd5e44b5230596df4",
+    "/fonts/moms-typewriter.ttf": "efed906033b46aae88c09fd1296c9d7f5d13af5c",
+    "/fonts/oldlondon.ttf": "27e84c8b41eea278e26b35ee1d34093137d50342",
+    "/fonts/traveling-typewriter.otf": "f5bb8227c1503a5ee05d502c76d746a5695b2427",
+    "/icons/first.png": "95e0f86d517db7ff899d4400539f8987534eaaca",
+    "/icons/hat.png": "5e9c57b4a382a2718fb0be19ffd80021e01bff42",
+    "/icons/icon-128x128.png": "f912963bdc6d5a38d8f1dd0afbaab2ce8d657acb",
+    "/icons/icon-144x144.png": "b155fd5f2fd5d2ea7760721063003c4cd95fd783",
+    "/icons/icon-152x152.png": "eae6e0f0c8afb8aaae339e2a569b43e9238e5e6c",
+    "/icons/icon-192x192.png": "15c4180454633880d98674aa7394656196c91584",
+    "/icons/icon-384x384.png": "94a915751ef6c9282df9aea405ad679230631814",
+    "/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
+    "/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
+    "/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
+    "/icons/second.png": "e6cb701c37d795ae7ba58b7eade0322f13c139cc",
+    "/icons/third.png": "9e1ab2416ebb04bb7b83e7ca8a7828d9e04d7d64",
+    "/icons/winner.png": "f98899eda4cffeed4223679f1cac359b767b46aa",
+    "/images/crumpled.jpg": "bd9304b48415c7bff3ccc65abac2ae7dc80be980",
+    "/images/retro-paper.jpg": "4ee363f7bfec37ebcaa4028c6f3c02fe329e7e77",
+    "/images/stained.avif": "ccf2fe7f82c123bbd0628076c303da3e1cb8e246",
+    "/images/vintage-white.avif": "24d900f54a2b50e92c2fd26ab60cd0dd34509751",
+    "/index.html": "1f8c2b523b1fc63cf486356a08d99d0e2215edc8",
+    "/main-OXRNLUPJ.js": "33719d137a4cab9b637cd2083c4b04fce39a7d19",
+    "/manifest.webmanifest": "91bc89187bd43fc494544a6f296e9e1f27d3e74c",
+    "/polyfills-N6LQB2YD.js": "52a57fff1bfa58a16f07a379b0cecf9fd01868e2",
+    "/scripts-KETKLC3O.js": "15976b0125c90eb822341c1d4bc51a9817b41d1e",
+    "/styles-IS7JWCUY.css": "988142f183b185d9b31024a8a8b18fdaf7df2480"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}

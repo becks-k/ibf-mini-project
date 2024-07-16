@@ -1,0 +1,36 @@
+<div class="container home-container">
+    <h2 class="text-center">Welcome {{ username | titlecase}}</h2>
+    <div class="text-left mb-1 button-group">
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#apiKeyModal">Input API Key</button>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#generateModal" (click)="openGenerateModal()">Generate Mystery</button>
+    </div>
+
+    <div class="mystery-list" *ngIf="mysteries$ | async as mysteries; else loading">
+        <div *ngIf="mysteries.length > 0; else noMysteries">
+            <div class="row">
+                <div class="col-md-3 mb-4" *ngFor="let mystery of mysteries">
+                    <div class="mystery-card">
+                        <img [src]="mystery.coverImageUrl" [alt]="mystery.coverImageDescription" class="mystery-image">
+                        <div class="card-body">
+                            <h3 class="card-title">{{ mystery.mysteryName }}</h3>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn btn-primary card-btn" (click)="playMystery(mystery)">Play</button>
+                            <button class="btn btn-warning card-btn" (click)="viewMystery(mystery)">View</button>
+                            <span *ngIf="userId === testUserId">
+                                <button class="btn btn-secondary card-btn" (click)="deleteMystery(mystery.mysteryId)">Delete</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modals -->
+<app-generate-mystery (mysteryGenerated)="onMysteryGenerated($event)"></app-generate-mystery>
+<app-api-key></app-api-key>
+
+<ng-template #loading>Loading...</ng-template>
+<ng-template #noMysteries class="text-center">Generate new mysteries!</ng-template>

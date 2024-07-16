@@ -1,0 +1,32 @@
+<div class="modal fade" id="generateModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="generateModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form method="GET" [formGroup]="mysteryForm" (ngSubmit)="generateMystery()">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="generateModalLabel">Generate Mystery</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>State a theme for the mystery, for example:</p>
+                        <ul>
+                            <li>Time traveling dinosaurs</li>
+                            <li>Mysterious masquerade</li>
+                            <li>Animal farm</li>
+                        </ul>
+                        <p>A random theme will be generated if no input is provided!</p>
+                        <div class="form-container">
+                        <input class="form-control" type="text" name="theme" formControlName="theme" placeholder="Input theme">
+                        <div *ngIf="message">
+                            <p>{{message}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="closeGenerateModal" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Generate</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

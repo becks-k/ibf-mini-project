@@ -1,0 +1,56 @@
+.login-container {
+    margin-top: 15vh;
+}
+
+.login-container h2 {
+font-size: 2rem;
+margin-bottom: 1.5rem;
+font-family: 'ttw', sans-serif;
+color: #F0CBAD; 
+}
+
+.form-label {
+font-family: 'ttw', sans-serif;
+color: #e0e0e0;
+text-align: left;
+display: block;
+margin-bottom: 0.5rem;
+}
+
+.form-control {
+background-color: #2a2a2a;
+border: 1px solid #444;
+color: #e0e0e0;
+padding: 0.75rem;
+margin-bottom: 1rem;
+border-radius: 4px;
+}
+
+.form-control::placeholder {
+color: #b0b0b0;
+}
+
+
+.btn-link {
+    margin: 0.2rem;;
+    padding: 0.75rem 0rem;
+}
+
+
+.back-button {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 1.5rem;
+    color: #e0e0e0;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #555 ;
+    cursor: not-allowed;
+}
+
+.error {
+    margin-top: 20px;
+}

@@ -1,0 +1,29 @@
+<div class="list-group sidebar">
+    <div *ngIf="mystery$ | async as mystery; else loading">
+        
+        <h4 class="sidebar-title">Crime Scene</h4>
+        <a class="list-group-item list-group-item-action" [routerLink]="['crime']">Examine crime scene</a>
+
+        <h4 class="sidebar-title">Interrogate</h4>
+        <div *ngFor="let character of mystery.characters | orderBy: 'name'">
+            <div *ngIf="character.dead != true">
+                <a class="list-group-item list-group-item-action char-list" [routerLink]="['suspect', character.id]">
+                    <div>
+                        <img class="character-img" [src]="character.imageUrl" [alt]="character.imageDescription">
+                    </div>
+                    <div>
+                        <p> {{character.name}}</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <h4 class="sidebar-title">The Daily Chronicles</h4>
+        <a class="list-group-item list-group-item-action" [routerLink]="['article']">Read newspaper</a>
+        
+        <h4 class="sidebar-title">Accuse</h4>
+        <a class="list-group-item list-group-item-action" [routerLink]="['accuse']">Make Accusation</a>
+    </div>
+</div>
+
+<ng-template #loading>No mystery found</ng-template>

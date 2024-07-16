@@ -1,0 +1,14 @@
+<div class="newspaper">
+    <h2 class="news-header">The Daily Chronicles</h2>
+    <hr>
+    <div *ngIf="mystery$ | async as mystery; else loading">
+        <div class="articles">
+            <div class="article" *ngFor="let article of mystery.articles">
+                <h4 class="article-headline">{{article.headline}}</h4>
+                <p class="article-content">{{article.content}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #loading>No mystery found</ng-template>

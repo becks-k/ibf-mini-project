@@ -1,0 +1,28 @@
+<div class="back-button">
+    <i class="bi bi-arrow-left" [routerLink]="['/']"></i>
+</div>
+
+<div class="login-container">
+    <h2>Login</h2>
+    <form method="POST" [formGroup]="loginForm" (ngSubmit)="login()">
+        <div>
+            <label class="form-label" for="username">Username </label>
+            <input class="form-control" type="text" name="username" formControlName="username" oninput="this.value = this.value.toLowerCase()">
+        </div>
+        <div>
+            <label class="form-label" for="password">Password </label>
+            <input class="form-control" type="password" name="password" formControlName="password">
+        </div>
+        <div>
+            <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#resetPasswordModal">Forgot password?</button>
+        </div>
+        <button class="btn btn-primary" type="submit" [disabled]="loginForm.invalid">Login</button>
+        <button class="btn btn-warning" type="button" [routerLink]="['/register']">Register</button>
+        <div class="error" *ngIf="errorMessage">
+            {{errorMessage}}
+        </div>
+        
+    </form>
+</div>
+
+<app-reset-password-link></app-reset-password-link>

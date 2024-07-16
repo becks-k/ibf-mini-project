@@ -1,0 +1,58 @@
+<div *ngIf="character$ | async as character; else loading">
+    <div class="container-fluid">
+        <div class="row">
+            <img class="col-3 character-img" [src]="character.imageUrl">
+            <div class="col-9">
+                <h5 class="character-name">{{character.name}}</h5>
+                <p class="character-description">{{character.imageDescription}}</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat display -->
+    <div class="chat-container" #chatContainer *ngIf="messages$ | async as messages">
+        <div *ngFor="let message of messages">
+            <div *ngIf="message.sender === 'AI'">
+                <div class="chat-bubble received">
+                    <p class="suspect">{{message.suspectName}}</p>
+                    <p>{{message.text}}</p>
+                    </div>
+                </div>
+            <div *ngIf="message.sender !== 'AI'">
+                <div class="chat-bubble sent">
+                    <p class="detective">{{message.sender | titlecase}}</p> 
+                    <p> {{message.text}}</p>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="messageSent">
+            <div *ngIf="messageSent" class="chat-bubble received await-response">
+                <div class="spinner-grow" style="width: 0.5rem; height: 0.5rem; margin: 2px;" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-grow" style="width: 0.5rem; height: 0.5rem; margin: 2px;" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-grow" style="width: 0.5rem; height: 0.5rem; margin: 2px;" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <!-- Chat input form -->
+    <form method="GET" [formGroup]="chatForm" (keyup.enter)="sendMessage(chatForm.value.text, character.name)">
+        <div class="form-group">
+            <textarea class="form-control" id="dialogue" rows="2" formControlName="text" placeholder="Talk to suspect"></textarea>
+        </div>
+    </form>
+</div>
+
+
+    
+
+
+
+<ng-template #loading>
+    Loading...
+</ng-template>

@@ -1,0 +1,35 @@
+<app-header></app-header>
+
+<div class="leaderboard-container">
+    <h2>Leaderboard</h2>
+    <div *ngIf="players$ | async as players; else noPlayers">
+        <table class="table align-middle table-striped table-light table-hover">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Total Points</th>
+                    <th>Mysteries Played</th>
+                    <th>Best Score<br> Per Mystery<br> (out of 100)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of players; let i = index">
+                    <td>
+                        <img *ngIf="i === 0" src="/icons/first.png" alt="">
+                        <img *ngIf="i === 1" src="/icons/second.png" alt="">
+                        <img *ngIf="i === 2" src="/icons/third.png" alt="">
+                        <span *ngIf="i >= 3">{{i + 1}}</span>
+                        
+                    </td>
+                    <td>{{p.username}}</td>
+                    <td>{{p.totalScore}}</td>
+                    <td>{{p.mysteriesPlayed}}</td>
+                    <td>{{p.highestScore}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<ng-template #noPlayers>Leaderboard is unavailable</ng-template>

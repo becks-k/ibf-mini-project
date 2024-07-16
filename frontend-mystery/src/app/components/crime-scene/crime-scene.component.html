@@ -1,0 +1,44 @@
+<div class="scene-container" *ngIf="mystery$ | async as mystery">
+    <img class="img-fluid rounded" [src]="mystery.crimeSceneImageUrl" alt="">
+    <p>{{mystery.crimeLocationDescription}}</p>
+</div>
+<hr>
+
+<!-- Chat display -->
+<div class="chat-container" *ngIf="observation">
+    <div *ngIf="observation.sender === 'AI'"> 
+        <p>{{observation.text}}</p>
+    </div>
+    <div *ngIf="messageSent">
+        <div *ngIf="messageSent" class="pending">
+            <div class="spinner-grow text-light" style="width: 0.5rem; height: 0.5rem; margin: 2px;" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <div class="spinner-grow text-light" style="width: 0.5rem; height: 0.5rem; margin: 2px;" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <div class="spinner-grow text-light" style="width: 0.5rem; height: 0.5rem; margin: 2px;" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Chat input form -->
+<form method="GET" [formGroup]="crimeForm" (keyup.enter)="sendMessage(crimeForm.value.text)">
+    <div class="form-group">
+        <!-- <label for="dialogue">Action </label> -->
+        <textarea class="form-control" id="dialogue" rows="2" formControlName="text" placeholder="Input an action e.g. Search crime scene"></textarea>
+    </div>
+</form>
+    
+
+
+<ng-template #noMessages>
+    <p>Start a chat</p>
+</ng-template>
+
+<ng-template #loading>
+    Loading...
+</ng-template>
+
